@@ -34,3 +34,30 @@ void Application::PrintMainOptions()
 	std::cout << "(4) Exit" << std::endl;
 	std::cout << "------------------------" << std::endl;
 }
+
+void Application::PlayerVsMachine()
+{
+	system("cls");
+	PrintTitle();
+	std::cout << "-----------------------------" << std::endl;
+	std::cout << "|___PLAYER --VS-- MACHINE___|" << std::endl;
+	std::cout << "-----------------------------" << std::endl << std::endl;
+}
+
+void Application::PlayerVsPlayer()
+{
+	system("cls");
+	PrintTitle();
+	std::cout << "----------------------------" << std::endl;
+	std::cout << "|___PLAYER --VS-- PLAYER___|" << std::endl;
+	std::cout << "----------------------------" << std::endl << std::endl;
+}
+
+void Application::MachineVsMachine()
+{
+	system("cls");
+	PrintTitle();
+	std::cout << "------------------------------" << std::endl;
+	std::cout << "|___MACHINE --VS-- MACHINE___|" << std::endl;
+	std::cout << "------------------------------" << std::endl << std::endl;
+}

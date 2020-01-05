@@ -16,6 +16,7 @@ int main()
 		{
 		case '1':
 			application.application_state = APPLICATION_STATE::PLAYER_VS_MACHINE;
+			application.PlayerVsMachine();
 			break;
 		case '2':
 			application.application_state = APPLICATION_STATE::PLAYER_VS_PLAYER;

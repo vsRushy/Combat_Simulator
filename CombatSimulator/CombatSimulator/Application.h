@@ -17,6 +17,10 @@ public:
 	void PrintTitle();
 	void PrintMainOptions();
 
+	void PlayerVsMachine();
+	void PlayerVsPlayer();
+	void MachineVsMachine();
+
 public:
 	APPLICATION_STATE application_state = APPLICATION_STATE::INIT;
 };
