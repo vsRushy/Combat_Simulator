@@ -1,4 +1,5 @@
 #include <iostream>
+#include <time.h>
 
 #include "Application.h"
 
@@ -8,6 +9,8 @@ int main()
 	
 	application.PrintTitle();
 	application.PrintMainOptions();
+
+	srand(time(NULL));
 
 	while (application.application_state != APPLICATION_STATE::EXIT)
 	{
