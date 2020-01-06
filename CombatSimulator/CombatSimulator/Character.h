@@ -10,14 +10,29 @@ public:
 	void SetDEF(const float& value);
 	void SetCRIT(const float& value);
 
+	void SetCurrentHP(const float& value);
+	void SetCurrentATK(const float& value);
+	void SetCurrentDEF(const float& value);
+	void SetCurrentCRIT(const float& value);
+
 	float GetHP() const;
 	float GetATK() const;
 	float GetDEF() const;
 	float GetCRIT() const;
+
+	float GetCurrentHP() const;
+	float GetCurrentATK() const;
+	float GetCurrentDEF() const;
+	float GetCurrentCRIT() const;
 
 private:
 	float hit_points = 0.0f;
 	float attack = 0.0f;
 	float defense = 0.0f;
 	float critical = 0.0f;
+
+	float current_hit_points = 0.0f;
+	float current_attack = 0.0f;
+	float current_defense = 0.0f;
+	float current_critical = 0.0f;
 };
