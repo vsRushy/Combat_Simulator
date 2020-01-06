@@ -5,6 +5,13 @@ Character::Character()
 
 }
 
+Character::Character(const float& hp, const float& atk, const float& def, const float& crit)
+	: hit_points(hp), attack(atk), defense(def), critical(crit),
+	current_hit_points(hp), current_attack(atk), current_defense(def), current_critical(crit)
+{
+
+}
+
 Character::~Character()
 {
 

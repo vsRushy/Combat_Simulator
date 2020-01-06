@@ -2,6 +2,8 @@ class Character
 {
 public:
 	Character();
+	Character(const float& hp, const float& atk, const float& def, const float& crit);
+
 	~Character();
 
 public:
