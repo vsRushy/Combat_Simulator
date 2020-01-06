@@ -1,8 +1,17 @@
+enum class CHARACTER_TYPE
+{
+	NONE,
+	TANK,
+	FIGHTER,
+	ARMORED,
+};
+
 class Character
 {
 public:
 	Character();
 	Character(const float& hp, const float& atk, const float& def, const float& crit);
+	Character(CHARACTER_TYPE type);
 
 	~Character();
 
@@ -37,4 +46,7 @@ private:
 	float current_attack = 0.0f;
 	float current_defense = 0.0f;
 	float current_critical = 0.0f;
+
+private:
+	CHARACTER_TYPE type = CHARACTER_TYPE::NONE;
 };

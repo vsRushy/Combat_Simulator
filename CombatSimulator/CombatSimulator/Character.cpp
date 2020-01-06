@@ -12,6 +12,41 @@ Character::Character(const float& hp, const float& atk, const float& def, const 
 
 }
 
+Character::Character(CHARACTER_TYPE type)
+{
+	switch (type)
+	{
+	case CHARACTER_TYPE::TANK:
+	{
+		hit_points = current_hit_points = 120.0f;
+		attack = current_attack = 15.0f;
+		defense = current_defense = 10.0f;
+		critical = current_critical = 5.0f;
+	}
+	break;
+	case CHARACTER_TYPE::FIGHTER:
+	{
+		hit_points = current_hit_points = 100.0f;
+		attack = current_attack = 17.5f;
+		defense = current_defense = 10.0f;
+		critical = current_critical = 5.0f;
+	}
+	break;
+	case CHARACTER_TYPE::ARMORED:
+	{
+		hit_points = current_hit_points = 100.0f;
+		attack = current_attack = 15.0f;
+		defense = current_defense = 25.0f;
+		critical = current_critical = 5.0f;
+	}
+	break;
+	case CHARACTER_TYPE::NONE:
+		break;
+	default:
+		break;
+	}
+}
+
 Character::~Character()
 {
 
