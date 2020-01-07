@@ -14,6 +14,7 @@ public:
 	~Application();
 
 public:
+	void MainMenu();
 	void PrintTitle();
 	void PrintMainOptions();
 

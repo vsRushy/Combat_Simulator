@@ -13,6 +13,36 @@ Application::~Application()
 
 }
 
+void Application::MainMenu()
+{
+	PrintTitle();
+	PrintMainOptions();
+
+	char input_menu;
+	scanf_s(" %c", &input_menu);
+	switch (input_menu)
+	{
+	case '1':
+		application_state = APPLICATION_STATE::PLAYER_VS_MACHINE;
+		PlayerVsMachine();
+		break;
+	case '2':
+		application_state = APPLICATION_STATE::PLAYER_VS_PLAYER;
+		PlayerVsPlayer();
+		break;
+	case '3':
+		application_state = APPLICATION_STATE::MACHINE_VS_MACHINE;
+		MachineVsMachine();
+		break;
+	case '4':
+		application_state = APPLICATION_STATE::EXIT;
+		exit(0);
+		break;
+	default:
+		break;
+	}
+}
+
 void Application::PrintTitle()
 {
 	std::cout << " _____                 _           _     _____                           _             " << std::endl;
@@ -90,6 +120,9 @@ void Application::PlayerVsMachine()
 	default:
 		break;
 	}
+
+	system("cls");
+	MainMenu();
 }
 
 void Application::PlayerVsPlayer()
@@ -146,6 +179,9 @@ void Application::PlayerVsPlayer()
 	default:
 		break;
 	}
+
+	system("cls");
+	MainMenu();
 }
 
 void Application::MachineVsMachine()
@@ -202,4 +238,7 @@ void Application::MachineVsMachine()
 	default:
 		break;
 	}
+
+	system("cls");
+	MainMenu();
 }
