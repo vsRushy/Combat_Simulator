@@ -58,6 +58,8 @@ private:
 	float current_defense = 0.0f;
 	float current_critical = 0.0f;
 
+	bool has_special_attack = true;
+
 private:
 	CHARACTER_TYPE type = CHARACTER_TYPE::NONE;
 };

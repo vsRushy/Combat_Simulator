@@ -147,11 +147,38 @@ void Character::PrintCurrentStats() const
 void Character::DoBasicAttack(Character* enemy) const
 {
 	enemy->SetCurrentHP(enemy->GetCurrentHP() - GetCurrentATK() / enemy->GetCurrentDEF() * MULTIPLIER_10f);
+
+	float critical_dmg = 0.0f;
+	int crit_number = rand() % 100;
+	(crit_number >= 0 && crit_number < 5) ? critical_dmg = GetCurrentATK() + GetCurrentATK() * 1.2f : 0.0f;
+	enemy->SetCurrentHP(enemy->GetCurrentHP() - critical_dmg);
 }
 
 void Character::DoSpecialAttack(Character* enemy)
 {
-
+	if (has_special_attack)
+	{
+		switch (type)
+		{
+		case CHARACTER_TYPE::TANK:
+			SetCurrentHP(GetCurrentHP() + 0.5f * GetCurrentHP());
+			has_special_attack = false;
+			break;
+		case CHARACTER_TYPE::FIGHTER:
+		{
+			float dmg_to_deal = GetCurrentATK() + 1.4f * GetCurrentATK(); // 140% plus damage; crit (already 120%) + 20% bonus
+			enemy->SetCurrentHP(enemy->GetCurrentHP() - dmg_to_deal);
+			has_special_attack = false;
+		}
+		break;
+		case CHARACTER_TYPE::ARMORED:
+			SetCurrentDEF(GetCurrentDEF() + 0.25f * GetCurrentDEF());
+			has_special_attack = false;
+			break;
+		default:
+			break;
+		}
+	}
 }
 
 void Character::DoBoostAttack()
