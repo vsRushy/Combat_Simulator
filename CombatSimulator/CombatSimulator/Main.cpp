@@ -23,9 +23,11 @@ int main()
 			break;
 		case '2':
 			application.application_state = APPLICATION_STATE::PLAYER_VS_PLAYER;
+			application.PlayerVsPlayer();
 			break;
 		case '3':
 			application.application_state = APPLICATION_STATE::MACHINE_VS_MACHINE;
+			application.MachineVsMachine();
 			break;
 		case '4':
 			application.application_state = APPLICATION_STATE::EXIT;
@@ -36,6 +38,6 @@ int main()
 
 	}
 
-	std::cin.get();
+	//std::cin.get();
 	return 0;
 }

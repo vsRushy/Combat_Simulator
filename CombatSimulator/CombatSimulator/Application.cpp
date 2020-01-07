@@ -99,6 +99,53 @@ void Application::PlayerVsPlayer()
 	std::cout << "----------------------------" << std::endl;
 	std::cout << "|___PLAYER --VS-- PLAYER___|" << std::endl;
 	std::cout << "----------------------------" << std::endl << std::endl;
+
+	Character* character_1 = nullptr;
+	Character* character_2 = nullptr;
+
+	std::cout << "--- SELECT CHARACTER 1 TYPE ---" << std::endl;
+	std::cout << "(1) Tank" << std::endl;
+	std::cout << "(2) Fighter" << std::endl;
+	std::cout << "(3) Armored" << std::endl;
+
+	char input_c1;
+	scanf_s(" %c", &input_c1);
+	switch (input_c1)
+	{
+	case '1':
+		character_1 = new Character(CHARACTER_TYPE::TANK);
+		break;
+	case '2':
+		character_1 = new Character(CHARACTER_TYPE::FIGHTER);
+		break;
+	case '3':
+		character_1 = new Character(CHARACTER_TYPE::ARMORED);
+		break;
+	default:
+		break;
+	}
+
+	std::cout << "--- SELECT CHARACTER 2 TYPE ---" << std::endl;
+	std::cout << "(1) Tank" << std::endl;
+	std::cout << "(2) Fighter" << std::endl;
+	std::cout << "(3) Armored" << std::endl;
+
+	char input_c2;
+	scanf_s(" %c", &input_c2);
+	switch (input_c2)
+	{
+	case '1':
+		character_2 = new Character(CHARACTER_TYPE::TANK);
+		break;
+	case '2':
+		character_2 = new Character(CHARACTER_TYPE::FIGHTER);
+		break;
+	case '3':
+		character_2 = new Character(CHARACTER_TYPE::ARMORED);
+		break;
+	default:
+		break;
+	}
 }
 
 void Application::MachineVsMachine()
@@ -108,4 +155,51 @@ void Application::MachineVsMachine()
 	std::cout << "------------------------------" << std::endl;
 	std::cout << "|___MACHINE --VS-- MACHINE___|" << std::endl;
 	std::cout << "------------------------------" << std::endl << std::endl;
+
+	Character* character_1 = nullptr;
+	Character* character_2 = nullptr;
+
+	std::cout << "--- SELECT CHARACTER 1 TYPE ---" << std::endl;
+	std::cout << "(1) Tank" << std::endl;
+	std::cout << "(2) Fighter" << std::endl;
+	std::cout << "(3) Armored" << std::endl;
+
+	char input_c1;
+	scanf_s(" %c", &input_c1);
+	switch (input_c1)
+	{
+	case '1':
+		character_1 = new Character(CHARACTER_TYPE::TANK);
+		break;
+	case '2':
+		character_1 = new Character(CHARACTER_TYPE::FIGHTER);
+		break;
+	case '3':
+		character_1 = new Character(CHARACTER_TYPE::ARMORED);
+		break;
+	default:
+		break;
+	}
+
+	std::cout << "--- SELECT CHARACTER 2 TYPE ---" << std::endl;
+	std::cout << "(1) Tank" << std::endl;
+	std::cout << "(2) Fighter" << std::endl;
+	std::cout << "(3) Armored" << std::endl;
+
+	char input_c2;
+	scanf_s(" %c", &input_c2);
+	switch (input_c2)
+	{
+	case '1':
+		character_2 = new Character(CHARACTER_TYPE::TANK);
+		break;
+	case '2':
+		character_2 = new Character(CHARACTER_TYPE::FIGHTER);
+		break;
+	case '3':
+		character_2 = new Character(CHARACTER_TYPE::ARMORED);
+		break;
+	default:
+		break;
+	}
 }
