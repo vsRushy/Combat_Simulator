@@ -2,6 +2,8 @@
 
 #include "Character.h"
 
+#define MULTIPLIER_10f 10.0f
+
 Character::Character()
 {
 
@@ -142,7 +144,22 @@ void Character::PrintCurrentStats() const
 	std::cout << "CRIT: " << GetCurrentCRIT() << std::endl << std::endl;
 }
 
-void Character::DoBasicAttack(Character* enemy)
+void Character::DoBasicAttack(Character* enemy) const
 {
-	enemy->SetCurrentHP(enemy->GetCurrentHP() - GetCurrentATK() / enemy->GetCurrentDEF());
+	enemy->SetCurrentHP(enemy->GetCurrentHP() - GetCurrentATK() / enemy->GetCurrentDEF() * MULTIPLIER_10f);
+}
+
+void Character::DoSpecialAttack(Character* enemy)
+{
+
+}
+
+void Character::DoBoostAttack()
+{
+	current_attack += 0.05f * GetCurrentATK();
+}
+
+void Character::DoBoostDefense()
+{
+	current_defense += 0.05f * GetCurrentDEF();
 }

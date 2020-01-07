@@ -42,8 +42,8 @@ public:
 
 	// Actions -----
 
-	void DoBasicAttack(Character* enemy);
-	void DoSpecialAttack();
+	void DoBasicAttack(Character* enemy) const;
+	void DoSpecialAttack(Character* enemy);
 	void DoBoostAttack();
 	void DoBoostDefense();
 
