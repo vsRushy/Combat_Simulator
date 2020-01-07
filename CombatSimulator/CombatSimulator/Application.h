@@ -1,3 +1,5 @@
+class Character;
+
 enum class APPLICATION_STATE
 {
 	EXIT = -1,
@@ -21,6 +23,9 @@ public:
 	void PlayerVsMachine();
 	void PlayerVsPlayer();
 	void MachineVsMachine();
+
+private:
+	void CombatPlayerVsMachine(Character* c1, Character* c2);
 
 public:
 	APPLICATION_STATE application_state = APPLICATION_STATE::INIT;

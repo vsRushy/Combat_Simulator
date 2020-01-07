@@ -130,8 +130,7 @@ void Application::PlayerVsMachine()
 	std::cout << "Character 2." << std::endl;
 	character_2->PrintCurrentStats();
 
-	char test;
-	scanf_s(" %c", &test);
+	CombatPlayerVsMachine(character_1, character_2);
 
 	system("cls");
 	MainMenu();
@@ -277,4 +276,12 @@ void Application::MachineVsMachine()
 
 	system("cls");
 	MainMenu();
+}
+
+void Application::CombatPlayerVsMachine(Character* c1, Character* c2)
+{
+	while (c1->GetCurrentHP() > 0.0f || c2->GetCurrentHP() > 0.0f)
+	{
+
+	}
 }
