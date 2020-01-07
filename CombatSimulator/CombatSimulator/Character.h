@@ -36,6 +36,10 @@ public:
 	float GetCurrentDEF() const;
 	float GetCurrentCRIT() const;
 
+	// ---------
+	
+	void PrintCurrentStats() const;
+
 private:
 	float hit_points = 0.0f;
 	float attack = 0.0f;

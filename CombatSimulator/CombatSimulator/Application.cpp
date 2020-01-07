@@ -122,6 +122,18 @@ void Application::PlayerVsMachine()
 	}
 
 	system("cls");
+	PrintTitle();
+
+	std::cout << "____STATS____" << std::endl;
+	std::cout << "Character 1." << std::endl;
+	character_1->PrintCurrentStats();
+	std::cout << "Character 2." << std::endl;
+	character_2->PrintCurrentStats();
+
+	char test;
+	scanf_s(" %c", &test);
+
+	system("cls");
 	MainMenu();
 }
 
@@ -181,6 +193,18 @@ void Application::PlayerVsPlayer()
 	}
 
 	system("cls");
+	PrintTitle();
+
+	std::cout << "____STATS____" << std::endl;
+	std::cout << "Character 1." << std::endl;
+	character_1->PrintCurrentStats();
+	std::cout << "Character 2." << std::endl;
+	character_2->PrintCurrentStats();
+
+	char test;
+	scanf_s(" %c", &test);
+
+	system("cls");
 	MainMenu();
 }
 
@@ -238,6 +262,18 @@ void Application::MachineVsMachine()
 	default:
 		break;
 	}
+
+	system("cls");
+	PrintTitle();
+
+	std::cout << "____STATS____" << std::endl;
+	std::cout << "Character 1." << std::endl;
+	character_1->PrintCurrentStats();
+	std::cout << "Character 2." << std::endl;
+	character_2->PrintCurrentStats();
+
+	char test;
+	scanf_s(" %c", &test);
 
 	system("cls");
 	MainMenu();

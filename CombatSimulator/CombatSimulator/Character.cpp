@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "Character.h"
 
 Character::Character()
@@ -130,4 +132,12 @@ float Character::GetCurrentDEF() const
 float Character::GetCurrentCRIT() const
 {
 	return current_critical;
+}
+
+void Character::PrintCurrentStats() const
+{
+	std::cout << "HP: " << GetCurrentHP() << std::endl;
+	std::cout << "ATK: " << GetCurrentATK() << std::endl;
+	std::cout << "DEF: " << GetCurrentDEF() << std::endl;
+	std::cout << "CRIT: " << GetCurrentCRIT() << std::endl;
 }
