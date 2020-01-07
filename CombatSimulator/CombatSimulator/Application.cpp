@@ -124,9 +124,6 @@ void Application::PlayerVsMachine()
 	system("cls");
 	PrintTitle();
 
-	character_1->SetOponent(character_2);
-	character_2->SetOponent(character_1);
-
 	CombatPlayerVsMachine(character_1, character_2);
 
 	system("cls");
@@ -191,9 +188,6 @@ void Application::PlayerVsPlayer()
 	system("cls");
 	PrintTitle();
 
-	character_1->SetOponent(character_2);
-	character_2->SetOponent(character_1);
-
 	system("cls");
 	MainMenu();
 }
@@ -256,9 +250,6 @@ void Application::MachineVsMachine()
 	system("cls");
 	PrintTitle();
 
-	character_1->SetOponent(character_2);
-	character_2->SetOponent(character_1);
-
 	system("cls");
 	MainMenu();
 }
@@ -274,19 +265,35 @@ void Application::ShowPlayerCombatOptions() const
 
 void Application::CombatPlayerVsMachine(Character* c1, Character* c2)
 {
-	while (c1->GetCurrentHP() > 0.0f || c2->GetCurrentHP() > 0.0f)
+	do
 	{
 		std::cout << "____STATS____" << std::endl;
 		std::cout << "Character 1." << std::endl;
 		c1->PrintCurrentStats();
 		std::cout << "Character 2." << std::endl;
 		c2->PrintCurrentStats();
-
+		
 		std::cout << "Player 1, select an option: " << std::endl;
 		ShowPlayerCombatOptions();
+		
 		char option;
 		scanf_s(" %c", &option);
+		switch (option)
+		{
+		case '1':
+			c1->DoBasicAttack(c2);
+			break;
+		case '2':
+			break;
+		case '3':
+			break;
+		case '4':
+			break;
+		default:
+			break;
+		}
 
 		//_sleep(100);
 	}
+	while ((c1->GetCurrentHP() > 0.0f && c2->GetCurrentHP() > 0.0f));
 }

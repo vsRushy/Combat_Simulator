@@ -36,16 +36,18 @@ public:
 	float GetCurrentDEF() const;
 	float GetCurrentCRIT() const;
 
-	void SetOponent(Character* oponent);
-	Character* GetOponent() const;
-
 	// ---------
 	
 	void PrintCurrentStats() const;
 
-private:
-	Character* oponent = nullptr;
+	// Actions -----
 
+	void DoBasicAttack(Character* enemy);
+	void DoSpecialAttack();
+	void DoBoostAttack();
+	void DoBoostDefense();
+
+private:
 	float hit_points = 0.0f;
 	float attack = 0.0f;
 	float defense = 0.0f;
