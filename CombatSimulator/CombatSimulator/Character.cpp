@@ -149,5 +149,5 @@ void Character::PrintCurrentStats() const
 	std::cout << "HP: " << GetCurrentHP() << std::endl;
 	std::cout << "ATK: " << GetCurrentATK() << std::endl;
 	std::cout << "DEF: " << GetCurrentDEF() << std::endl;
-	std::cout << "CRIT: " << GetCurrentCRIT() << std::endl;
+	std::cout << "CRIT: " << GetCurrentCRIT() << std::endl << std::endl;
 }

@@ -24,6 +24,8 @@ public:
 	void PlayerVsPlayer();
 	void MachineVsMachine();
 
+	void ShowPlayerCombatOptions() const;
+
 private:
 	void CombatPlayerVsMachine(Character* c1, Character* c2);
 
