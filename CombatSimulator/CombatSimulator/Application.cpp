@@ -124,6 +124,9 @@ void Application::PlayerVsMachine()
 	system("cls");
 	PrintTitle();
 
+	character_1->SetOponent(character_2);
+	character_2->SetOponent(character_1);
+
 	std::cout << "____STATS____" << std::endl;
 	std::cout << "Character 1." << std::endl;
 	character_1->PrintCurrentStats();
@@ -193,6 +196,9 @@ void Application::PlayerVsPlayer()
 
 	system("cls");
 	PrintTitle();
+
+	character_1->SetOponent(character_2);
+	character_2->SetOponent(character_1);
 
 	std::cout << "____STATS____" << std::endl;
 	std::cout << "Character 1." << std::endl;
@@ -264,6 +270,9 @@ void Application::MachineVsMachine()
 
 	system("cls");
 	PrintTitle();
+
+	character_1->SetOponent(character_2);
+	character_2->SetOponent(character_1);
 
 	std::cout << "____STATS____" << std::endl;
 	std::cout << "Character 1." << std::endl;

@@ -134,6 +134,16 @@ float Character::GetCurrentCRIT() const
 	return current_critical;
 }
 
+void Character::SetOponent(Character* oponent)
+{
+	this->oponent = oponent;
+}
+
+Character* Character::GetOponent() const
+{
+	return oponent;
+}
+
 void Character::PrintCurrentStats() const
 {
 	std::cout << "HP: " << GetCurrentHP() << std::endl;
