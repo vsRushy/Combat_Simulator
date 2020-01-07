@@ -266,6 +266,9 @@ void Application::CombatPlayerVsMachine(Character* c1, Character* c2)
 {
 	do
 	{
+		system("cls");
+		PrintTitle();
+
 		std::cout << "____STATS____" << std::endl;
 		std::cout << "Character 1." << std::endl;
 		c1->PrintCurrentStats();
@@ -283,10 +286,13 @@ void Application::CombatPlayerVsMachine(Character* c1, Character* c2)
 			c1->DoBasicAttack(c2);
 			break;
 		case '2':
+			c1->DoSpecialAttack(c2);
 			break;
 		case '3':
+			c1->DoBoostAttack();
 			break;
 		case '4':
+			c1->DoBoostDefense();
 			break;
 		default:
 			break;
