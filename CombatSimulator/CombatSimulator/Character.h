@@ -47,6 +47,9 @@ public:
 	void DoBoostAttack();
 	void DoBoostDefense();
 
+	// For machine turns
+	void DoAction(Character* enemy);
+
 private:
 	float hit_points = 0.0f;
 	float attack = 0.0f;

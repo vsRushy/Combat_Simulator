@@ -190,3 +190,25 @@ void Character::DoBoostDefense()
 {
 	current_defense += 0.05f * GetCurrentDEF();
 }
+
+void Character::DoAction(Character* enemy)
+{
+	int action_index = rand() % 4;
+	switch (action_index)
+	{
+	case 0:
+		DoBasicAttack(enemy);
+		break;
+	case 1:
+		DoSpecialAttack(enemy);
+		break;
+	case 2:
+		DoBoostAttack();
+		break;
+	case 3:
+		DoBoostDefense();
+		break;
+	default:
+		break;
+	}
+}

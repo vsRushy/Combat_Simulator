@@ -298,6 +298,8 @@ void Application::CombatPlayerVsMachine(Character* c1, Character* c2)
 			break;
 		}
 
+		c2->DoAction(c1);
+
 		//_sleep(100);
 	}
 	while ((c1->GetCurrentHP() > 0.0f && c2->GetCurrentHP() > 0.0f));
