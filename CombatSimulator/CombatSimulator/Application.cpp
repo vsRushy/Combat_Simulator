@@ -1,4 +1,6 @@
 #include <iostream>
+#include <thread>
+#include <chrono>
 
 #include "Application.h"
 #include "Character.h"
@@ -391,29 +393,13 @@ void Application::CombatMachineVsMachine(Character* c1, Character* c2)
 		std::cout << "Character 2." << std::endl;
 		c2->PrintCurrentStats();
 
-		std::cout << "Player 1, select an option: " << std::endl;
 		ShowPlayerCombatOptions();
 
-		char option;
-		scanf_s(" %c", &option);
-		switch (option)
-		{
-		case '1':
-			c1->DoBasicAttack(c2);
-			break;
-		case '2':
-			c1->DoSpecialAttack(c2);
-			break;
-		case '3':
-			c1->DoBoostAttack();
-			break;
-		case '4':
-			c1->DoBoostDefense();
-			break;
-		default:
-			break;
-		}
-
+		c1->DoAction(c2);
+		std::this_thread::sleep_for(std::chrono::seconds(1));
 		c2->DoAction(c1);
+
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+
 	} while ((c1->GetCurrentHP() > 0.0f && c2->GetCurrentHP() > 0.0f));
 }
