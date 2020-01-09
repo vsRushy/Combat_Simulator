@@ -187,6 +187,8 @@ void Application::PlayerVsPlayer()
 	system("cls");
 	PrintTitle();
 
+	CombatPlayerVsPlayer(character_1, character_2);
+
 	system("cls");
 	MainMenu();
 }
@@ -249,6 +251,8 @@ void Application::MachineVsMachine()
 	system("cls");
 	PrintTitle();
 
+	CombatMachineVsMachine(character_1, character_2);
+
 	system("cls");
 	MainMenu();
 }
@@ -299,8 +303,16 @@ void Application::CombatPlayerVsMachine(Character* c1, Character* c2)
 		}
 
 		c2->DoAction(c1);
-
-		//_sleep(100);
 	}
 	while ((c1->GetCurrentHP() > 0.0f && c2->GetCurrentHP() > 0.0f));
+}
+
+void Application::CombatPlayerVsPlayer(Character* c1, Character* c2)
+{
+
+}
+
+void Application::CombatMachineVsMachine(Character* c1, Character* c2)
+{
+
 }

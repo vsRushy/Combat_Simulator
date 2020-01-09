@@ -28,6 +28,8 @@ public:
 
 private:
 	void CombatPlayerVsMachine(Character* c1, Character* c2);
+	void CombatPlayerVsPlayer(Character* c1, Character* c2);
+	void CombatMachineVsMachine(Character* c1, Character* c2);
 
 public:
 	APPLICATION_STATE application_state = APPLICATION_STATE::INIT;
