@@ -394,11 +394,11 @@ void Application::CombatMachineVsMachine(Character* c1, Character* c2)
 		c2->PrintCurrentStats();
 
 		ShowPlayerCombatOptions();
+		std::cout << "Note: wait for this combat to end." << std::endl;
 
 		c1->DoAction(c2);
 		std::this_thread::sleep_for(std::chrono::seconds(1));
 		c2->DoAction(c1);
-
 		std::this_thread::sleep_for(std::chrono::seconds(1));
 
 	} while ((c1->GetCurrentHP() > 0.0f && c2->GetCurrentHP() > 0.0f));
