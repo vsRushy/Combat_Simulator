@@ -309,10 +309,111 @@ void Application::CombatPlayerVsMachine(Character* c1, Character* c2)
 
 void Application::CombatPlayerVsPlayer(Character* c1, Character* c2)
 {
+	do
+	{
+		system("cls");
+		PrintTitle();
 
+		std::cout << "____STATS____" << std::endl;
+		std::cout << "Character 1." << std::endl;
+		c1->PrintCurrentStats();
+		std::cout << "Character 2." << std::endl;
+		c2->PrintCurrentStats();
+
+		std::cout << "Player 1, select an option: " << std::endl;
+		ShowPlayerCombatOptions();
+
+		char option1;
+		scanf_s(" %c", &option1);
+		switch (option1)
+		{
+		case '1':
+			c1->DoBasicAttack(c2);
+			break;
+		case '2':
+			c1->DoSpecialAttack(c2);
+			break;
+		case '3':
+			c1->DoBoostAttack();
+			break;
+		case '4':
+			c1->DoBoostDefense();
+			break;
+		default:
+			break;
+		}
+
+		system("cls");
+		PrintTitle();
+
+		std::cout << "____STATS____" << std::endl;
+		std::cout << "Character 1." << std::endl;
+		c1->PrintCurrentStats();
+		std::cout << "Character 2." << std::endl;
+		c2->PrintCurrentStats();
+
+		std::cout << "Player 2, select an option: " << std::endl;
+		ShowPlayerCombatOptions();
+
+		char option2;
+		scanf_s(" %c", &option2);
+		switch (option2)
+		{
+		case '1':
+			c2->DoBasicAttack(c1);
+			break;
+		case '2':
+			c2->DoSpecialAttack(c1);
+			break;
+		case '3':
+			c2->DoBoostAttack();
+			break;
+		case '4':
+			c2->DoBoostDefense();
+			break;
+		default:
+			break;
+		}
+
+	} while ((c1->GetCurrentHP() > 0.0f && c2->GetCurrentHP() > 0.0f));
 }
 
 void Application::CombatMachineVsMachine(Character* c1, Character* c2)
 {
+	do
+	{
+		system("cls");
+		PrintTitle();
 
+		std::cout << "____STATS____" << std::endl;
+		std::cout << "Character 1." << std::endl;
+		c1->PrintCurrentStats();
+		std::cout << "Character 2." << std::endl;
+		c2->PrintCurrentStats();
+
+		std::cout << "Player 1, select an option: " << std::endl;
+		ShowPlayerCombatOptions();
+
+		char option;
+		scanf_s(" %c", &option);
+		switch (option)
+		{
+		case '1':
+			c1->DoBasicAttack(c2);
+			break;
+		case '2':
+			c1->DoSpecialAttack(c2);
+			break;
+		case '3':
+			c1->DoBoostAttack();
+			break;
+		case '4':
+			c1->DoBoostDefense();
+			break;
+		default:
+			break;
+		}
+
+		c2->DoAction(c1);
+	} while ((c1->GetCurrentHP() > 0.0f && c2->GetCurrentHP() > 0.0f));
 }
