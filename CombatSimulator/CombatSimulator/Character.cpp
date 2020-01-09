@@ -179,6 +179,10 @@ void Character::DoSpecialAttack(Character* enemy)
 			break;
 		}
 	}
+	else
+	{
+		DoBasicAttack(enemy);
+	}
 }
 
 void Character::DoBoostAttack()
@@ -193,22 +197,22 @@ void Character::DoBoostDefense()
 
 void Character::DoAction(Character* enemy)
 {
-	int action_index = rand() % 4;
-	switch (action_index)
+	int action_index = rand() % 100;
+
+	if (action_index >= 0 && action_index < 65)
 	{
-	case 0:
 		DoBasicAttack(enemy);
-		break;
-	case 1:
+	}
+	else if (action_index >= 65 && action_index < 80)
+	{
 		DoSpecialAttack(enemy);
-		break;
-	case 2:
+	}
+	else if (action_index >= 80 && action_index < 90)
+	{
 		DoBoostAttack();
-		break;
-	case 3:
+	}
+	else if (action_index >= 90 && action_index < 100)
+	{
 		DoBoostDefense();
-		break;
-	default:
-		break;
 	}
 }
