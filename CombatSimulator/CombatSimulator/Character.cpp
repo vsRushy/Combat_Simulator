@@ -199,19 +199,19 @@ void Character::DoAction(Character* enemy)
 {
 	int action_index = rand() % 100;
 
-	if (action_index >= 0 && action_index < 65)
+	if (action_index >= 0 && action_index < 55)
 	{
 		DoBasicAttack(enemy);
 	}
-	else if (action_index >= 65 && action_index < 80)
+	else if (action_index >= 55 && action_index < 70)
 	{
 		DoSpecialAttack(enemy);
 	}
-	else if (action_index >= 80 && action_index < 90)
+	else if (action_index >= 70 && action_index < 85)
 	{
 		DoBoostAttack();
 	}
-	else if (action_index >= 90 && action_index < 100)
+	else if (action_index >= 85 && action_index < 100)
 	{
 		DoBoostDefense();
 	}
